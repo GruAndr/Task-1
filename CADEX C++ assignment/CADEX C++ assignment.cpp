@@ -91,6 +91,9 @@ int main()
     for (const auto& curve : curves) {
         curve->~Curve();
     }
+
+    curves.clear();
+    curves.shrink_to_fit();
    
     return 0;
 }
