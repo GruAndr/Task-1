@@ -92,8 +92,18 @@ int main()
         curve->~Curve();
     }
 
+    
+    for (const auto& circle:circles)
+    {
+        circle->~Circle();
+    }
+
+    
     curves.clear();
     curves.shrink_to_fit();
+
+    circles.clear();
+    circles.shrink_to_fit();
    
     return 0;
 }
