@@ -1,4 +1,4 @@
-﻿#include <random>
+#include <random>
 //#include "CADEX C++ assignment.h"
 #include "curves.h"
 
@@ -75,8 +75,8 @@ int main()
     }
 
 
-    std::sort(circles.begin(), circles.end(), [](const Circle* a, const Circle* b) {
-        return a->radius < b->radius;
+    std::sort(circles.begin(), circles.end(), [](Circle* a,Circle* b) {
+        return a->getRadius() < b->getRadius();
         });
 
     int sum = 0;
@@ -84,27 +84,27 @@ int main()
 
     for (const auto& circle : circles)
     {
-        sum += circle->radius;
+        sum += circle->getRadius();
+        
     }
-
 
     for (const auto& curve : curves) {
         curve->~Curve();
+        
     }
-
     
+
     for (const auto& circle:circles)
     {
         circle->~Circle();
     }
 
-    
+
     curves.clear();
     curves.shrink_to_fit();
 
     circles.clear();
     circles.shrink_to_fit();
-   
+
     return 0;
 }
-
