@@ -37,7 +37,9 @@ public:
 
 	std::vector<double> getDerivative(double t) override;
 
+	double getRadius();
 
+private:
 	double radius;
 
 	double CenterX;
@@ -61,7 +63,7 @@ public:
 
 	std::vector<double> getDerivative(double t) override;
 
-
+private:
 	double radiusX;
 	double radiusY;
 
@@ -85,7 +87,7 @@ public:
 
 	std::vector<double> getDerivative(double t) override;
 
-
+private:
 	double radius;
 	double step;
 
@@ -97,4 +99,5 @@ public:
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
